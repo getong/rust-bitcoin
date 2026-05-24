@@ -198,18 +198,14 @@ impl fmt::Display for SerializedSignature {
 
 impl fmt::LowerHex for SerializedSignature {
     #[inline]
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        self.fmt_internal(f, hex::Case::Lower)
-    }
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { self.fmt_internal(f, hex::Case::Lower) }
 }
 impl_to_hex_from_lower_hex!(SerializedSignature, |signature: &SerializedSignature| signature.len
     * 2);
 
 impl fmt::UpperHex for SerializedSignature {
     #[inline]
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        self.fmt_internal(f, hex::Case::Upper)
-    }
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { self.fmt_internal(f, hex::Case::Upper) }
 }
 
 impl PartialEq for SerializedSignature {
